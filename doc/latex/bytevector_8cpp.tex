@@ -1,0 +1,116 @@
+\hypertarget{bytevector_8cpp}{}\section{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/bytevector.cpp File Reference}
+\label{bytevector_8cpp}\index{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/bytevector.\+cpp@{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/bytevector.\+cpp}}
+
+
+自定义类类型\+Byte\+Vector的实现文件  
+
+
+{\ttfamily \#include \char`\"{}include/bytevector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bytevector_8cpp_aaa22d9eb63bc8fe37beba211c088743a}\label{bytevector_8cpp_aaa22d9eb63bc8fe37beba211c088743a}} 
+std\+::ostream \& \mbox{\hyperlink{bytevector_8cpp_aaa22d9eb63bc8fe37beba211c088743a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&bv)
+\begin{DoxyCompactList}\small\item\em 重载的$<$$<$运算符 输出运算符$<$$<$，因为第一个参数一定是ostream类型，所以只能重载为友元函数. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bytevector_8cpp_a8449bdaf5c587bf4e8074338cb76accd}\label{bytevector_8cpp_a8449bdaf5c587bf4e8074338cb76accd}} 
+bool \mbox{\hyperlink{bytevector_8cpp_a8449bdaf5c587bf4e8074338cb76accd}{operator==}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载关系运算符==，双目运算符一般重载为友元函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bytevector_8cpp_a1edd8742ac3558c8b9b0215f6e57d19e}\label{bytevector_8cpp_a1edd8742ac3558c8b9b0215f6e57d19e}} 
+bool \mbox{\hyperlink{bytevector_8cpp_a1edd8742ac3558c8b9b0215f6e57d19e}{operator!=}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载关系运算符!=，应该成对实现 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bytevector_8cpp_a40c2c033496550b8355c4e4c1b963c1d}\label{bytevector_8cpp_a40c2c033496550b8355c4e4c1b963c1d}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{bytevector_8cpp_a40c2c033496550b8355c4e4c1b963c1d}{operator+}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载+运算符，双目运算符应为友元函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bytevector_8cpp_a7499859ed0c553f896d918acb3723601}\label{bytevector_8cpp_a7499859ed0c553f896d918acb3723601}} 
+void \mbox{\hyperlink{bytevector_8cpp_a7499859ed0c553f896d918acb3723601}{B\+V2chararray}} (char $\ast$hash, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&bv)
+\begin{DoxyCompactList}\small\item\em 实现\+Byte\+Vector到char数组的转换 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{bytevector_8cpp_aaf8f8930762134f46cc30293ab7d0dd0}{B\+V2string\+\_\+base64}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&bv)
+\begin{DoxyCompactList}\small\item\em 实现\+Byte\+Vector到string的base64编码的转换 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{bytevector_8cpp_afb4a37bf4926935cd7a5b26df44131b1}{B\+V2string\+\_\+raw}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&bv)
+\begin{DoxyCompactList}\small\item\em 实现\+Byte\+Vector到string的\+A\+S\+C\+I\+I编码的转换 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{bytevector_8cpp_a5dcd1af9cc8ba059ce0fa94761a2437d}{string2\+B\+V\+\_\+raw}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em 实现从\+A\+S\+C\+I\+I可见字符串到\+Byte\+Vector的转换 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bytevector_8cpp_aa79c9697a4855c2574ab3c4ab1212fb9}\label{bytevector_8cpp_aa79c9697a4855c2574ab3c4ab1212fb9}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{bytevector_8cpp_aa79c9697a4855c2574ab3c4ab1212fb9}{string2\+B\+V\+\_\+\+U\+C\+S2}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em 实现从\+A\+S\+C\+I\+I的字符串到\+U\+C\+S-\/2的\+Byte\+Vector的转化 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{bytevector_8cpp_a1bfee042525e1b948efea3a72c981c06}{set\+\_\+random\+\_\+charset}} (int bits, char $\ast$charset, int charset\+\_\+size)
+\begin{DoxyCompactList}\small\item\em 按照位数和字符集，实现获取一个随机位数的盐 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{bytevector_8cpp_aafb380bf8bfd32517febf31c61b402ca}{M\+D5}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&pwd)
+\begin{DoxyCompactList}\small\item\em Byte\+Vector的\+M\+D5算法，调用底层的md5函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+自定义类类型\+Byte\+Vector的实现文件 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bytevector_8cpp_aaf8f8930762134f46cc30293ab7d0dd0}\label{bytevector_8cpp_aaf8f8930762134f46cc30293ab7d0dd0}} 
+\index{bytevector.\+cpp@{bytevector.\+cpp}!B\+V2string\+\_\+base64@{B\+V2string\+\_\+base64}}
+\index{B\+V2string\+\_\+base64@{B\+V2string\+\_\+base64}!bytevector.\+cpp@{bytevector.\+cpp}}
+\subsubsection{\texorpdfstring{B\+V2string\+\_\+base64()}{BV2string\_base64()}}
+{\footnotesize\ttfamily std\+::string B\+V2string\+\_\+base64 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{bv }\end{DoxyParamCaption})}
+
+
+
+实现\+Byte\+Vector到string的base64编码的转换 
+
+通用的基础函数，实现\+Byte\+Vector到string的base64编码的转换 \mbox{\Hypertarget{bytevector_8cpp_afb4a37bf4926935cd7a5b26df44131b1}\label{bytevector_8cpp_afb4a37bf4926935cd7a5b26df44131b1}} 
+\index{bytevector.\+cpp@{bytevector.\+cpp}!B\+V2string\+\_\+raw@{B\+V2string\+\_\+raw}}
+\index{B\+V2string\+\_\+raw@{B\+V2string\+\_\+raw}!bytevector.\+cpp@{bytevector.\+cpp}}
+\subsubsection{\texorpdfstring{B\+V2string\+\_\+raw()}{BV2string\_raw()}}
+{\footnotesize\ttfamily std\+::string B\+V2string\+\_\+raw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{bv }\end{DoxyParamCaption})}
+
+
+
+实现\+Byte\+Vector到string的\+A\+S\+C\+I\+I编码的转换 
+
+实现从\+Byte\+Vector到string的\+A\+S\+C\+I\+I编码的转换 \mbox{\Hypertarget{bytevector_8cpp_aafb380bf8bfd32517febf31c61b402ca}\label{bytevector_8cpp_aafb380bf8bfd32517febf31c61b402ca}} 
+\index{bytevector.\+cpp@{bytevector.\+cpp}!M\+D5@{M\+D5}}
+\index{M\+D5@{M\+D5}!bytevector.\+cpp@{bytevector.\+cpp}}
+\subsubsection{\texorpdfstring{M\+D5()}{MD5()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} M\+D5 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Byte\+Vector的\+M\+D5算法，调用底层的md5函数 
+
+通用的基础函数，实现\+M\+D5 \mbox{\Hypertarget{bytevector_8cpp_a1bfee042525e1b948efea3a72c981c06}\label{bytevector_8cpp_a1bfee042525e1b948efea3a72c981c06}} 
+\index{bytevector.\+cpp@{bytevector.\+cpp}!set\+\_\+random\+\_\+charset@{set\+\_\+random\+\_\+charset}}
+\index{set\+\_\+random\+\_\+charset@{set\+\_\+random\+\_\+charset}!bytevector.\+cpp@{bytevector.\+cpp}}
+\subsubsection{\texorpdfstring{set\+\_\+random\+\_\+charset()}{set\_random\_charset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} set\+\_\+random\+\_\+charset (\begin{DoxyParamCaption}\item[{int}]{bits,  }\item[{char $\ast$}]{charset,  }\item[{int}]{charset\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+按照位数和字符集，实现获取一个随机位数的盐 
+
+通用的基础函数，实现set\+\_\+random\+\_\+charset
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & 盐的位数 \\
+\hline
+{\em charset} & 盐的字符集数组 \\
+\hline
+{\em charset\+\_\+size} & 盐字符集数组的大小 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{bytevector_8cpp_a5dcd1af9cc8ba059ce0fa94761a2437d}\label{bytevector_8cpp_a5dcd1af9cc8ba059ce0fa94761a2437d}} 
+\index{bytevector.\+cpp@{bytevector.\+cpp}!string2\+B\+V\+\_\+raw@{string2\+B\+V\+\_\+raw}}
+\index{string2\+B\+V\+\_\+raw@{string2\+B\+V\+\_\+raw}!bytevector.\+cpp@{bytevector.\+cpp}}
+\subsubsection{\texorpdfstring{string2\+B\+V\+\_\+raw()}{string2BV\_raw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} string2\+B\+V\+\_\+raw (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+实现从\+A\+S\+C\+I\+I可见字符串到\+Byte\+Vector的转换 
+
+通用的基础函数，实现从\+A\+S\+C\+I\+I可见字符串到\+Byte\+Vector的转换 

@@ -1,0 +1,87 @@
+\hypertarget{common_8cpp}{}\section{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/common.cpp File Reference}
+\label{common_8cpp}\index{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/common.\+cpp@{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/common.\+cpp}}
+
+
+供各种算法使用的通用基础函数  
+
+
+{\ttfamily \#include \char`\"{}include/common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/md5.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{common_8cpp_a2b8784e8fa400bbc4c27db2a3b37697b}{encode64}} (const unsigned char $\ast$hash, int count, unsigned char $\ast$base64\+Code)
+\begin{DoxyCompactList}\small\item\em base64加密算法实现 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common_8cpp_aa717b93a05de478ebe123f3853022153}{md5}} (unsigned char $\ast$hash, const std\+::string \&pwd)
+\begin{DoxyCompactList}\small\item\em md5加密算法实现 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{common_8cpp_a8deb6e5fab3e83e74b9af9d52616f037}{base64\+Char2}} \mbox{[}$\,$\mbox{]} = \char`\"{}./0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}
+\begin{DoxyCompactList}\small\item\em wordpress算法base64加密算法的字符集 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+供各种算法使用的通用基础函数 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{common_8cpp_a2b8784e8fa400bbc4c27db2a3b37697b}\label{common_8cpp_a2b8784e8fa400bbc4c27db2a3b37697b}} 
+\index{common.\+cpp@{common.\+cpp}!encode64@{encode64}}
+\index{encode64@{encode64}!common.\+cpp@{common.\+cpp}}
+\subsubsection{\texorpdfstring{encode64()}{encode64()}}
+{\footnotesize\ttfamily void encode64 (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{hash,  }\item[{int}]{count,  }\item[{unsigned char $\ast$}]{base64\+Code }\end{DoxyParamCaption})}
+
+
+
+base64加密算法实现 
+
+base64加密算法声明
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & 要加密的hash值 \\
+\hline
+{\em count} & hash值的字节数 \\
+\hline
+{\em base64\+Code} & base64加密后的base64密文 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{common_8cpp_aa717b93a05de478ebe123f3853022153}\label{common_8cpp_aa717b93a05de478ebe123f3853022153}} 
+\index{common.\+cpp@{common.\+cpp}!md5@{md5}}
+\index{md5@{md5}!common.\+cpp@{common.\+cpp}}
+\subsubsection{\texorpdfstring{md5()}{md5()}}
+{\footnotesize\ttfamily void md5 (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{hash,  }\item[{const std\+::string \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+md5加密算法实现 
+
+md5加密算法声明
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & 存储md5哈希值的16字节数组 \\
+\hline
+{\em pwd} & 需要加密的口令 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{common_8cpp_a8deb6e5fab3e83e74b9af9d52616f037}\label{common_8cpp_a8deb6e5fab3e83e74b9af9d52616f037}} 
+\index{common.\+cpp@{common.\+cpp}!base64\+Char2@{base64\+Char2}}
+\index{base64\+Char2@{base64\+Char2}!common.\+cpp@{common.\+cpp}}
+\subsubsection{\texorpdfstring{base64\+Char2}{base64Char2}}
+{\footnotesize\ttfamily unsigned char base64\+Char2\mbox{[}$\,$\mbox{]} = \char`\"{}./0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}}
+
+
+
+wordpress算法base64加密算法的字符集 
+
+wordpress算法base64加密算法的字符集声明 

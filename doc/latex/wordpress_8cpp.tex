@@ -1,0 +1,224 @@
+\hypertarget{wordpress_8cpp}{}\section{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/alg/wordpress.cpp File Reference}
+\label{wordpress_8cpp}\index{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/alg/wordpress.\+cpp@{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/alg/wordpress.\+cpp}}
+
+
+wordpress算法的口令产生过程  
+
+
+{\ttfamily \#include \char`\"{}../include/extra\+\_\+info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/bytevector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/wordpress.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{wordpress_8cpp_a830aacc2e8f40bccc3e16b45b6de9896}{wordpress\+\_\+init\+\_\+alg\+\_\+desp}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra)
+\begin{DoxyCompactList}\small\item\em wordpress算法的初始化 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{wordpress_8cpp_a1aed854ddcc9679f4a9843a31f268613}{wordpress\+\_\+check\+\_\+cmdline}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra, std\+::map$<$ std\+::string, std\+::string $>$ \&extra\+\_\+name\+\_\+value)
+\begin{DoxyCompactList}\small\item\em 根据输入修改wordpress算法的配置 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{wordpress_8cpp_a30d2cd673868e9c2f12321c4aa47d97a}{wordpress\+\_\+get\+\_\+random\+\_\+salt}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra)
+\begin{DoxyCompactList}\small\item\em 产生指定长度的随机盐 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{wordpress_8cpp_a170a6a3a006f4a97a28a76463e667ef7}{wordpress\+\_\+prepare\+\_\+pwd}} (std\+::string \&pwd)
+\begin{DoxyCompactList}\small\item\em 对口令进行预处理 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{wordpress_8cpp_a22845493dd84390359964e1db8f71256}{wordpress\+\_\+hash\+\_\+pwd}} (\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&pwd, \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&salt8, struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra)
+\begin{DoxyCompactList}\small\item\em 根据pwd,salt(以字节为单位)，附加信息产生wordpress算法二进制hash值 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{wordpress_8cpp_a27973701bf19724f5d73e201e5ee33a9}{wordpress\+\_\+get\+\_\+cipher}} (\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&hash, \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&salt, struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra)
+\begin{DoxyCompactList}\small\item\em 根据hash,salt,附加信息产生符合hashcat规范的密文字符串 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structalg__desp}{alg\+\_\+desp}} \mbox{\hyperlink{wordpress_8cpp_acd7e547dcba4ebb6bf86e307f39b410c}{wordpress\+\_\+alg\+\_\+desp}}
+\begin{DoxyCompactList}\small\item\em wordpress算法的算法描述结构体定义 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+wordpress算法的口令产生过程 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{wordpress_8cpp_a1aed854ddcc9679f4a9843a31f268613}\label{wordpress_8cpp_a1aed854ddcc9679f4a9843a31f268613}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+check\+\_\+cmdline@{wordpress\+\_\+check\+\_\+cmdline}}
+\index{wordpress\+\_\+check\+\_\+cmdline@{wordpress\+\_\+check\+\_\+cmdline}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+check\+\_\+cmdline()}{wordpress\_check\_cmdline()}}
+{\footnotesize\ttfamily int wordpress\+\_\+check\+\_\+cmdline (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{extra\+\_\+name\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+根据输入修改wordpress算法的配置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & wordpress算法的附加信息 \\
+\hline
+{\em extra\+\_\+name\+\_\+value} & 输入配置的名称和数值对 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item 遍历输入配置的名称和数值对
+\end{DoxyEnumerate}
+
+1.\+1 设置盐长度salt\+\_\+len
+
+1.\+2 设置迭代次数标识iter\+\_\+pos
+
+1.\+3 设置盐字符集salt\+\_\+set
+
+1.\+3.\+1 设置子字符集个数
+
+1.\+3.\+2 在extra\+\_\+info.\+values\mbox{[}0\mbox{]}.dchar\mbox{[}32\mbox{]}中设置每个子集，dchar\mbox{[}2n\mbox{]}代表下界，dchar\mbox{[}2n+1\mbox{]}代表上界
+
+1.\+3.\+3 根据用户输入的字符集，更新wordpress字符集数组wordpress\+\_\+charset \mbox{\Hypertarget{wordpress_8cpp_a27973701bf19724f5d73e201e5ee33a9}\label{wordpress_8cpp_a27973701bf19724f5d73e201e5ee33a9}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+get\+\_\+cipher@{wordpress\+\_\+get\+\_\+cipher}}
+\index{wordpress\+\_\+get\+\_\+cipher@{wordpress\+\_\+get\+\_\+cipher}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+get\+\_\+cipher()}{wordpress\_get\_cipher()}}
+{\footnotesize\ttfamily std\+::string wordpress\+\_\+get\+\_\+cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{hash,  }\item[{\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{salt,  }\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra }\end{DoxyParamCaption})}
+
+
+
+根据hash,salt,附加信息产生符合hashcat规范的密文字符串 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash16} & 16字节hash值 \\
+\hline
+{\em salt8} & 8字节salt值 \\
+\hline
+{\em extra} & wordpress算法的附加信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wordpress的密文字符串 
+\end{DoxyReturn}
+密文格式：\$P\$ 迭代次数标识 salt hash(base64编码) \mbox{\Hypertarget{wordpress_8cpp_a30d2cd673868e9c2f12321c4aa47d97a}\label{wordpress_8cpp_a30d2cd673868e9c2f12321c4aa47d97a}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+get\+\_\+random\+\_\+salt@{wordpress\+\_\+get\+\_\+random\+\_\+salt}}
+\index{wordpress\+\_\+get\+\_\+random\+\_\+salt@{wordpress\+\_\+get\+\_\+random\+\_\+salt}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+get\+\_\+random\+\_\+salt()}{wordpress\_get\_random\_salt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} wordpress\+\_\+get\+\_\+random\+\_\+salt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra }\end{DoxyParamCaption})}
+
+
+
+产生指定长度的随机盐 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & wordpress的附加信息，盐的位数由extra\mbox{[}S\+A\+L\+T\+\_\+\+L\+E\+N\+\_\+\+I\+N\+D\+EX\mbox{]}.cur\+\_\+value.\+dint决定 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+二进制盐值，存储于\+Bytevector对象中 
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item 根据字符集合产生盐
+\item 返回得到的盐 
+\end{DoxyEnumerate}\mbox{\Hypertarget{wordpress_8cpp_a22845493dd84390359964e1db8f71256}\label{wordpress_8cpp_a22845493dd84390359964e1db8f71256}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+hash\+\_\+pwd@{wordpress\+\_\+hash\+\_\+pwd}}
+\index{wordpress\+\_\+hash\+\_\+pwd@{wordpress\+\_\+hash\+\_\+pwd}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+hash\+\_\+pwd()}{wordpress\_hash\_pwd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} wordpress\+\_\+hash\+\_\+pwd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{pwd,  }\item[{\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&}]{salt8,  }\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra }\end{DoxyParamCaption})}
+
+
+
+根据pwd,salt(以字节为单位)，附加信息产生wordpress算法二进制hash值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwd} & 二进制口令值 \\
+\hline
+{\em salt8} & 8个字节的二进制颜值 \\
+\hline
+{\em extra} & wordpress算法的附加信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16字节的二进制hash值，存储于\+Byte\+Vector对象中 
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item 根据extra\mbox{[}I\+T\+E\+R\+\_\+\+P\+O\+S\+\_\+\+I\+N\+D\+EX\mbox{]}.cur\+\_\+value.\+dchar\mbox{[}0\mbox{]}获取迭代次数iter\+\_\+count
+\item result16=M\+D5(salt8+pwd);
+\item 循环iter\+\_\+count次
+\end{DoxyEnumerate}
+
+3.\+1 result16 = M\+D5(result16 + pwd);
+
+
+\begin{DoxyEnumerate}
+\item 返回16字节的二进制hash值 
+\end{DoxyEnumerate}\mbox{\Hypertarget{wordpress_8cpp_a830aacc2e8f40bccc3e16b45b6de9896}\label{wordpress_8cpp_a830aacc2e8f40bccc3e16b45b6de9896}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+init\+\_\+alg\+\_\+desp@{wordpress\+\_\+init\+\_\+alg\+\_\+desp}}
+\index{wordpress\+\_\+init\+\_\+alg\+\_\+desp@{wordpress\+\_\+init\+\_\+alg\+\_\+desp}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+init\+\_\+alg\+\_\+desp()}{wordpress\_init\_alg\_desp()}}
+{\footnotesize\ttfamily int wordpress\+\_\+init\+\_\+alg\+\_\+desp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra }\end{DoxyParamCaption})}
+
+
+
+wordpress算法的初始化 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & 算法的附加信息 \\
+\hline
+\end{DoxyParams}
+1.清除所有extra信息
+
+2.盐长度salt\+\_\+len为64位或者32位，缺省为64为
+
+3.迭代次数标识iter\+\_\+pos，缺省为\char`\"{}\+B\char`\"{}
+
+4.盐的字符集合为\mbox{[}a-\/z\mbox{]}\mbox{[}0-\/9\mbox{]}\mbox{[}A-\/Z\mbox{]}\mbox{[}.-\/.\mbox{]}\mbox{[}/-\//\mbox{]}
+
+5.扩展盐字符集合到wordpress\+\_\+charset数组 \mbox{\Hypertarget{wordpress_8cpp_a170a6a3a006f4a97a28a76463e667ef7}\label{wordpress_8cpp_a170a6a3a006f4a97a28a76463e667ef7}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+prepare\+\_\+pwd@{wordpress\+\_\+prepare\+\_\+pwd}}
+\index{wordpress\+\_\+prepare\+\_\+pwd@{wordpress\+\_\+prepare\+\_\+pwd}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+prepare\+\_\+pwd()}{wordpress\_prepare\_pwd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} wordpress\+\_\+prepare\+\_\+pwd (\begin{DoxyParamCaption}\item[{std\+::string \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+对口令进行预处理 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwd} & 输入的口令字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+二进制口令值，存储于自定义\+Bytevector对象中 
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item 将string类型的口令转为二进制值，wordpress口令二进制值为口令\+A\+S\+C\+I\+I码 
+\end{DoxyEnumerate}
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{wordpress_8cpp_acd7e547dcba4ebb6bf86e307f39b410c}\label{wordpress_8cpp_acd7e547dcba4ebb6bf86e307f39b410c}} 
+\index{wordpress.\+cpp@{wordpress.\+cpp}!wordpress\+\_\+alg\+\_\+desp@{wordpress\+\_\+alg\+\_\+desp}}
+\index{wordpress\+\_\+alg\+\_\+desp@{wordpress\+\_\+alg\+\_\+desp}!wordpress.\+cpp@{wordpress.\+cpp}}
+\subsubsection{\texorpdfstring{wordpress\+\_\+alg\+\_\+desp}{wordpress\_alg\_desp}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structalg__desp}{alg\+\_\+desp}} wordpress\+\_\+alg\+\_\+desp}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \mbox{\hyperlink{wordpress_8cpp_a830aacc2e8f40bccc3e16b45b6de9896}{wordpress\_init\_alg\_desp}},
+    \mbox{\hyperlink{wordpress_8cpp_a1aed854ddcc9679f4a9843a31f268613}{wordpress\_check\_cmdline}},
+    \mbox{\hyperlink{wordpress_8cpp_a30d2cd673868e9c2f12321c4aa47d97a}{wordpress\_get\_random\_salt}},
+    \mbox{\hyperlink{wordpress_8cpp_a170a6a3a006f4a97a28a76463e667ef7}{wordpress\_prepare\_pwd}},
+    \mbox{\hyperlink{wordpress_8cpp_a22845493dd84390359964e1db8f71256}{wordpress\_hash\_pwd}},
+    \mbox{\hyperlink{wordpress_8cpp_a27973701bf19724f5d73e201e5ee33a9}{wordpress\_get\_cipher}},
+    \textcolor{stringliteral}{"wordpress"}
+\}
+\end{DoxyCode}
+
+
+wordpress算法的算法描述结构体定义 
+

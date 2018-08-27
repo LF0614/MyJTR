@@ -1,0 +1,46 @@
+\hypertarget{structalg__desp}{}\section{alg\+\_\+desp Struct Reference}
+\label{structalg__desp}\index{alg\+\_\+desp@{alg\+\_\+desp}}
+
+
+每一个算法都由一个struct alg\+\_\+desp结构定义 包括一系列函数指针以及算法名称和附加信息数组  
+
+
+
+
+{\ttfamily \#include $<$extra\+\_\+info.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structalg__desp_a79af5fe8dd1b7cda16e9483eb66ad092}\label{structalg__desp_a79af5fe8dd1b7cda16e9483eb66ad092}} 
+int($\ast$ \mbox{\hyperlink{structalg__desp_a79af5fe8dd1b7cda16e9483eb66ad092}{init\+\_\+alg\+\_\+desp}} )(struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$\mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}})
+\begin{DoxyCompactList}\small\item\em 初始化当前的算法描述 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_a9c573b1f5fd0f941cc3a0bdc5836fe29}\label{structalg__desp_a9c573b1f5fd0f941cc3a0bdc5836fe29}} 
+int($\ast$ \mbox{\hyperlink{structalg__desp_a9c573b1f5fd0f941cc3a0bdc5836fe29}{check\+\_\+cmdline}} )(struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$\mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}}, std\+::map$<$ std\+::string, std\+::string $>$ \&extra\+\_\+name\+\_\+value)
+\begin{DoxyCompactList}\small\item\em 再次检查用户输入的信息，设置算法描述的当前值 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_ad55f8d88a8afb883af6bebd7fa0ced47}\label{structalg__desp_ad55f8d88a8afb883af6bebd7fa0ced47}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}}($\ast$ \mbox{\hyperlink{structalg__desp_ad55f8d88a8afb883af6bebd7fa0ced47}{get\+\_\+random\+\_\+salt}} )(struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$\mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}})
+\begin{DoxyCompactList}\small\item\em 产生salt\+\_\+len\+\_\+in\+\_\+bit位随机盐 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_a65f622300536302d87cf998484f63358}\label{structalg__desp_a65f622300536302d87cf998484f63358}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}}($\ast$ \mbox{\hyperlink{structalg__desp_a65f622300536302d87cf998484f63358}{prepare\+\_\+pwd}} )(std\+::string \&pwd)
+\begin{DoxyCompactList}\small\item\em 对pwd进行预处理，例如\+A\+S\+C\+I\+I码到\+U\+C\+S2的转换 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_ac44d43fa2f1cdaf637239832b9840634}\label{structalg__desp_ac44d43fa2f1cdaf637239832b9840634}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}}($\ast$ \mbox{\hyperlink{structalg__desp_ac44d43fa2f1cdaf637239832b9840634}{hash\+\_\+pwd}} )(\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&pwd, \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&salt, struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$\mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}})
+\begin{DoxyCompactList}\small\item\em 根据pwd,salt，附加信息产生hash值 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_a69f7eae5b6d9e09953587b2c6764eb0b}\label{structalg__desp_a69f7eae5b6d9e09953587b2c6764eb0b}} 
+std\+::string($\ast$ \mbox{\hyperlink{structalg__desp_a69f7eae5b6d9e09953587b2c6764eb0b}{get\+\_\+cipher}} )(\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&hash, \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&salt, struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$\mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}})
+\begin{DoxyCompactList}\small\item\em 根据hash,salt,附加信息产生符合hashcat规范的密文字符串 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_a6a61b0312ffd47b7c045915ce5aecdc7}\label{structalg__desp_a6a61b0312ffd47b7c045915ce5aecdc7}} 
+std\+::string \mbox{\hyperlink{structalg__desp_a6a61b0312ffd47b7c045915ce5aecdc7}{alg\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em 算法名称 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}\label{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}} 
+struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} \mbox{\hyperlink{structalg__desp_a02eb817495fc1d08be8f4dbe1769f9e5}{extra}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 最多32个有效信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+每一个算法都由一个struct alg\+\_\+desp结构定义 包括一系列函数指针以及算法名称和附加信息数组 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/include/\mbox{\hyperlink{extra__info_8h}{extra\+\_\+info.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{extra__info_8h}{}\section{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/include/extra\+\_\+info.h File Reference}
+\label{extra__info_8h}\index{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/include/extra\+\_\+info.\+h@{C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/include/extra\+\_\+info.\+h}}
+
+
+各种算法附加信息基础函数声明文件  
+
+
+{\ttfamily \#include \char`\"{}bytevector.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionextra__data}{extra\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em 附加信息结构体 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structalg__desp}{alg\+\_\+desp}}
+\begin{DoxyCompactList}\small\item\em 每一个算法都由一个struct alg\+\_\+desp结构定义 包括一系列函数指针以及算法名称和附加信息数组 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{extra__info_8h_a8989b55ea78278c1355be4ea82c54bb9}\label{extra__info_8h_a8989b55ea78278c1355be4ea82c54bb9}} 
+\#define {\bfseries S\+A\+L\+T\+\_\+\+L\+E\+N\+\_\+\+I\+N\+D\+EX}~0
+\item 
+\mbox{\Hypertarget{extra__info_8h_acb73a769ac9eebae978c457ea89596d4}\label{extra__info_8h_acb73a769ac9eebae978c457ea89596d4}} 
+\#define {\bfseries I\+T\+E\+R\+\_\+\+P\+O\+S\+\_\+\+I\+N\+D\+EX}~1
+\item 
+\mbox{\Hypertarget{extra__info_8h_ad7446ff28e108f6e95f8ab0bbcec0894}\label{extra__info_8h_ad7446ff28e108f6e95f8ab0bbcec0894}} 
+\#define {\bfseries P\+W\+D\+\_\+\+L\+E\+N\+\_\+\+I\+N\+D\+EX}~2
+\item 
+\mbox{\Hypertarget{extra__info_8h_a0140ebe0ef490974973c5e23a2f9c4f1}\label{extra__info_8h_a0140ebe0ef490974973c5e23a2f9c4f1}} 
+\#define {\bfseries S\+A\+L\+T\+\_\+\+C\+H\+A\+R\+S\+E\+T\+\_\+\+I\+N\+D\+EX}~3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{extra__info_8h_a12a1e6587a8c7c925432a3d6463b50aa}{clear\+\_\+extra\+\_\+valid}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra)
+\begin{DoxyCompactList}\small\item\em 清除extra的所有有效位 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{extra__info_8h_aa503bcafe281f60aa82a2338a46dcd4f}{set\+\_\+extra\+\_\+intarray}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra, int extra\+\_\+index, const std\+::string \&extra\+\_\+name, std\+::vector$<$ int $>$ intarray)
+\begin{DoxyCompactList}\small\item\em 设置当前算法描述结构体的extra数组的extra\+\_\+index位置的默认附加信息，该附加信息的值是整形数组 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{extra__info_8h_a7aad5b0bbaef864378089859623e0e5d}{set\+\_\+extra\+\_\+chararray}} (struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra, int extra\+\_\+index, const std\+::string \&extra\+\_\+name, const std\+::string \&chararray)
+\begin{DoxyCompactList}\small\item\em 附加信息的值是字符数组 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{extra__info_8h_a4e6c5cbbd75306b3e4a8392e3bfb8be5}{expand\+\_\+charset}} (char $\ast$charset, struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$extra, int subcharset\+\_\+size)
+\begin{DoxyCompactList}\small\item\em 根据extra设置算法的全局的字符集 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+各种算法附加信息基础函数声明文件 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{extra__info_8h_a12a1e6587a8c7c925432a3d6463b50aa}\label{extra__info_8h_a12a1e6587a8c7c925432a3d6463b50aa}} 
+\index{extra\+\_\+info.\+h@{extra\+\_\+info.\+h}!clear\+\_\+extra\+\_\+valid@{clear\+\_\+extra\+\_\+valid}}
+\index{clear\+\_\+extra\+\_\+valid@{clear\+\_\+extra\+\_\+valid}!extra\+\_\+info.\+h@{extra\+\_\+info.\+h}}
+\subsubsection{\texorpdfstring{clear\+\_\+extra\+\_\+valid()}{clear\_extra\_valid()}}
+{\footnotesize\ttfamily int clear\+\_\+extra\+\_\+valid (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra }\end{DoxyParamCaption})}
+
+
+
+清除extra的所有有效位 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & 算法附加信息 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{extra__info_8h_a4e6c5cbbd75306b3e4a8392e3bfb8be5}\label{extra__info_8h_a4e6c5cbbd75306b3e4a8392e3bfb8be5}} 
+\index{extra\+\_\+info.\+h@{extra\+\_\+info.\+h}!expand\+\_\+charset@{expand\+\_\+charset}}
+\index{expand\+\_\+charset@{expand\+\_\+charset}!extra\+\_\+info.\+h@{extra\+\_\+info.\+h}}
+\subsubsection{\texorpdfstring{expand\+\_\+charset()}{expand\_charset()}}
+{\footnotesize\ttfamily int expand\+\_\+charset (\begin{DoxyParamCaption}\item[{char $\ast$}]{charset,  }\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra,  }\item[{int}]{subcharset\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+根据extra设置算法的全局的字符集 
+
+
+\begin{DoxyParams}{Parameters}
+{\em charset} & 算法的全局字符集数组 \\
+\hline
+{\em extra} & 算法附加信息 \\
+\hline
+{\em subcharset\+\_\+size} & 子字符集的个数 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{extra__info_8h_a7aad5b0bbaef864378089859623e0e5d}\label{extra__info_8h_a7aad5b0bbaef864378089859623e0e5d}} 
+\index{extra\+\_\+info.\+h@{extra\+\_\+info.\+h}!set\+\_\+extra\+\_\+chararray@{set\+\_\+extra\+\_\+chararray}}
+\index{set\+\_\+extra\+\_\+chararray@{set\+\_\+extra\+\_\+chararray}!extra\+\_\+info.\+h@{extra\+\_\+info.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+extra\+\_\+chararray()}{set\_extra\_chararray()}}
+{\footnotesize\ttfamily int set\+\_\+extra\+\_\+chararray (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra,  }\item[{int}]{extra\+\_\+index,  }\item[{const std\+::string \&}]{extra\+\_\+name,  }\item[{const std\+::string \&}]{chararray }\end{DoxyParamCaption})}
+
+
+
+附加信息的值是字符数组 
+
+附加信息的值是字符数组
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & 算法附加信息 \\
+\hline
+{\em extra\+\_\+index} & 附加信息的位置 \\
+\hline
+{\em extra\+\_\+name} & 附加信息的名称 \\
+\hline
+{\em chararray} & 附加信息是一个字符数组 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{extra__info_8h_aa503bcafe281f60aa82a2338a46dcd4f}\label{extra__info_8h_aa503bcafe281f60aa82a2338a46dcd4f}} 
+\index{extra\+\_\+info.\+h@{extra\+\_\+info.\+h}!set\+\_\+extra\+\_\+intarray@{set\+\_\+extra\+\_\+intarray}}
+\index{set\+\_\+extra\+\_\+intarray@{set\+\_\+extra\+\_\+intarray}!extra\+\_\+info.\+h@{extra\+\_\+info.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+extra\+\_\+intarray()}{set\_extra\_intarray()}}
+{\footnotesize\ttfamily int set\+\_\+extra\+\_\+intarray (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structextra__info}{extra\+\_\+info}} $\ast$}]{extra,  }\item[{int}]{extra\+\_\+index,  }\item[{const std\+::string \&}]{extra\+\_\+name,  }\item[{std\+::vector$<$ int $>$}]{intarray }\end{DoxyParamCaption})}
+
+
+
+设置当前算法描述结构体的extra数组的extra\+\_\+index位置的默认附加信息，该附加信息的值是整形数组 
+
+设置当前算法描述结构体的extra数组的extra\+\_\+index位置的默认附加信息，该附加信息的值是整形数组
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra} & 算法附加信息 \\
+\hline
+{\em extra\+\_\+index} & 附加信息的位置 \\
+\hline
+{\em extra\+\_\+name} & 附加信息的名称 \\
+\hline
+{\em intarray} & 附加信息是一个整形数组 \\
+\hline
+\end{DoxyParams}

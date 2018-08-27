@@ -1,0 +1,62 @@
+\hypertarget{class_byte_vector}{}\section{Byte\+Vector Class Reference}
+\label{class_byte_vector}\index{Byte\+Vector@{Byte\+Vector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_byte_vector_a16e667346401dc6d6b6c87df40274ae4}\label{class_byte_vector_a16e667346401dc6d6b6c87df40274ae4}} 
+\mbox{\hyperlink{class_byte_vector_a16e667346401dc6d6b6c87df40274ae4}{Byte\+Vector}} (int cap=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY, int sz=0)
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a3446e40a63bb3e794791d27aea11030f}\label{class_byte_vector_a3446e40a63bb3e794791d27aea11030f}} 
+Byte \& \mbox{\hyperlink{class_byte_vector_a3446e40a63bb3e794791d27aea11030f}{operator\mbox{[}$\,$\mbox{]}}} (int)
+\begin{DoxyCompactList}\small\item\em 重载非常量版本的下标运算符 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a3ce736c7bda64deda1b4e6801f68bc80}\label{class_byte_vector_a3ce736c7bda64deda1b4e6801f68bc80}} 
+Byte \& \mbox{\hyperlink{class_byte_vector_a3ce736c7bda64deda1b4e6801f68bc80}{operator\mbox{[}$\,$\mbox{]}}} (int) const
+\begin{DoxyCompactList}\small\item\em 重载常量版本的下标运算符 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_ac5539983b6c6de6ef4c20811b827a624}\label{class_byte_vector_ac5539983b6c6de6ef4c20811b827a624}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \& \mbox{\hyperlink{class_byte_vector_ac5539983b6c6de6ef4c20811b827a624}{operator=}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&)
+\begin{DoxyCompactList}\small\item\em 重载拷贝赋值运算符 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a25ec937327da7acfa5c061bb6535a79f}\label{class_byte_vector_a25ec937327da7acfa5c061bb6535a79f}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \& \mbox{\hyperlink{class_byte_vector_a25ec937327da7acfa5c061bb6535a79f}{operator+=}} (const Byte \&)
+\begin{DoxyCompactList}\small\item\em 重载+=运算符 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_acb961af09bfb53efe8b89a1b91e50aba}\label{class_byte_vector_acb961af09bfb53efe8b89a1b91e50aba}} 
+\mbox{\hyperlink{class_byte_vector_acb961af09bfb53efe8b89a1b91e50aba}{$\sim$\+Byte\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a4737a95ed03ce6c9dac4aed27b02d3b0}\label{class_byte_vector_a4737a95ed03ce6c9dac4aed27b02d3b0}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_byte_vector_a5b84e37dae5afe2ef9044ba739b0b244}\label{class_byte_vector_a5b84e37dae5afe2ef9044ba739b0b244}} 
+int {\bfseries capacity} () const
+\item 
+\mbox{\Hypertarget{class_byte_vector_a9c7e92a6b4489e2b2519e062e45b1ed1}\label{class_byte_vector_a9c7e92a6b4489e2b2519e062e45b1ed1}} 
+void \mbox{\hyperlink{class_byte_vector_a9c7e92a6b4489e2b2519e062e45b1ed1}{resize}} (int new\+Size)
+\begin{DoxyCompactList}\small\item\em 改变容器\+Byte\+Vector的size大小 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a23a0a135f12000a1fd86b9b73325f986}\label{class_byte_vector_a23a0a135f12000a1fd86b9b73325f986}} 
+void \mbox{\hyperlink{class_byte_vector_a23a0a135f12000a1fd86b9b73325f986}{reserve}} (int new\+Capacity)
+\begin{DoxyCompactList}\small\item\em 给容器\+Byte\+Vector重新分配内存空间 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a714e2a7dda6926b9350450b51faea6c5}\label{class_byte_vector_a714e2a7dda6926b9350450b51faea6c5}} 
+bool {\bfseries is\+Empty} () const
+\item 
+\mbox{\Hypertarget{class_byte_vector_a5f8ee71427bd48aafeb3729965f3c756}\label{class_byte_vector_a5f8ee71427bd48aafeb3729965f3c756}} 
+Byte $\ast$ {\bfseries get\+Byte\+\_\+p} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_byte_vector_aaa22d9eb63bc8fe37beba211c088743a}\label{class_byte_vector_aaa22d9eb63bc8fe37beba211c088743a}} 
+std\+::ostream \& \mbox{\hyperlink{class_byte_vector_aaa22d9eb63bc8fe37beba211c088743a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&bv)
+\begin{DoxyCompactList}\small\item\em 重载的$<$$<$运算符 输出运算符$<$$<$，因为第一个参数一定是ostream类型，所以只能重载为友元函数. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a8449bdaf5c587bf4e8074338cb76accd}\label{class_byte_vector_a8449bdaf5c587bf4e8074338cb76accd}} 
+bool \mbox{\hyperlink{class_byte_vector_a8449bdaf5c587bf4e8074338cb76accd}{operator==}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载关系运算符==，双目运算符一般重载为友元函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a1edd8742ac3558c8b9b0215f6e57d19e}\label{class_byte_vector_a1edd8742ac3558c8b9b0215f6e57d19e}} 
+bool \mbox{\hyperlink{class_byte_vector_a1edd8742ac3558c8b9b0215f6e57d19e}{operator!=}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载关系运算符!=，应该成对实现 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_byte_vector_a40c2c033496550b8355c4e4c1b963c1d}\label{class_byte_vector_a40c2c033496550b8355c4e4c1b963c1d}} 
+\mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \mbox{\hyperlink{class_byte_vector_a40c2c033496550b8355c4e4c1b963c1d}{operator+}} (const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&lhs, const \mbox{\hyperlink{class_byte_vector}{Byte\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 重载+运算符，双目运算符应为友元函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/include/\mbox{\hyperlink{bytevector_8h}{bytevector.\+h}}\item 
+C\+:/\+Users/user/\+Desktop/\+My\+J\+T\+R\+\_\+7/src/\mbox{\hyperlink{bytevector_8cpp}{bytevector.\+cpp}}\end{DoxyCompactItemize}
